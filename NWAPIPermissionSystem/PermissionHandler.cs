@@ -165,12 +165,12 @@ namespace NWAPIPermissionSystem
             if (sp.Length == 1)
                 if (group.CombinedPermissions.Any(perm => perm.StartsWith(sp[0])))
                     return true;
-                if (sp.Length == 2)
-                    if (group.CombinedPermissions.Contains(sp[0] + ".*"))
-                        return true;
-                if (sp.Length == 3)
-                    if (group.CombinedPermissions.Contains(sp[0] + "." + sp[1] + ".*"))
-                        return true;
+            if (sp.Length == 2)
+                if (group.CombinedPermissions.Contains(sp[0] + ".*"))
+                    return true;
+            if (sp.Length == 3)
+                if (group.CombinedPermissions.Contains(sp[0] + "." + sp[1] + ".*"))
+                    return true;
             foreach(var perm in group.CombinedPermissions)
                 if (perm == permission)
                     return true;
